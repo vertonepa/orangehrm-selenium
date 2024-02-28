@@ -1,0 +1,10 @@
+package enums;
+
+public enum ConfigProperties {
+
+    BASE_URL,
+    OVERRIDE_REPORTS,
+    PASSED_STEPS_SCREENSHOTS,
+    FAILED_STEPS_SCREENSHOTS,
+    SKIPPED_STEPS_SCREENSHOTS
+}
