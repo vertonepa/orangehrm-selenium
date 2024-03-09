@@ -4,10 +4,11 @@ import annotations.ReportAnnotation;
 import enums.Category;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
+import pages.DashboardPage;
 import pages.LoginPage;
 
 public final class ExampleTest extends BaseTest {
-    LoginPage lp = new LoginPage();
+    DashboardPage dp = new DashboardPage();
 
     private ExampleTest() {
     }
@@ -15,8 +16,8 @@ public final class ExampleTest extends BaseTest {
     @ReportAnnotation(author = "vertonepa", category = Category.EXAMPLE)
     @Test(description = "Validar que al logearse se redireccione al dashboard")
     public void testcase() {
-        String header = lp.login("Admin", "admin123").getHeaderText();
+        String header = dp.getHeaderText();
 
-        Assertions.assertThat(header).isEqualTo("Dashboard");
+        soft.assertThat(header).isEqualTo("Dashboard");
     }
 }

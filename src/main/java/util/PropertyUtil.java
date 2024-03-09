@@ -37,4 +37,6 @@ public class PropertyUtil {
             throw new NoSuchPropertyFileException("El nombre de la propiedad: " + key + " no se encuentra. Verifique el archivo config.properties");
         return CONFIG_MAP.get(key.name().toLowerCase());
     }
+
+
 }
