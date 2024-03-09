@@ -8,8 +8,6 @@ import org.testng.annotations.BeforeMethod;
 import pages.LoginPage;
 import util.PropertyUtil;
 
-import java.util.Properties;
-
 
 public abstract class BaseTest {
     SoftAssertions soft = new SoftAssertions();

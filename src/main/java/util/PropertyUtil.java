@@ -1,7 +1,7 @@
 package util;
 
 import enums.ConfigProperties;
-import exceptions.NoSuchPropertyFileException;
+import exceptions.PropertyUtilsException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -34,7 +34,7 @@ public class PropertyUtil {
 
     public static String get(ConfigProperties key) {
         if (Objects.isNull(key) || Objects.isNull(CONFIG_MAP.get(key.name().toLowerCase())))
-            throw new NoSuchPropertyFileException("El nombre de la propiedad: " + key + " no se encuentra. Verifique el archivo config.properties");
+            throw new PropertyUtilsException("El nombre de la propiedad: " + key + " no se encuentra. Verifique el archivo config.properties");
         return CONFIG_MAP.get(key.name().toLowerCase());
     }
 
