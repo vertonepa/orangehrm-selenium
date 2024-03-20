@@ -1,17 +1,16 @@
 package driver;
 
 import enums.ConfigProperties;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
+import factories.DriverFactory;
 import util.PropertyUtil;
 
 import java.util.Objects;
 
 /**
-* Driver es la clase encargada de invocar y cerrar los navegadores.
-* <p>
-* También es responsable de configurar la variable driver en DriverManager.
-* */
+ * Driver es la clase encargada de invocar y cerrar los navegadores.
+ * <p>
+ * También es responsable de configurar la variable driver en DriverManager.
+ */
 
 public class Driver {
 
@@ -23,8 +22,7 @@ public class Driver {
      */
     public static void initDriver() {
         if (Objects.isNull(DriverManager.getDriver())) {
-            WebDriver driver = WebDriverManager.chromedriver().create();
-            DriverManager.setDriver(driver);
+            DriverManager.setDriver(DriverFactory.getDriver());
 
             DriverManager.getDriver().manage().window().maximize();
             DriverManager.getDriver().get(PropertyUtil.get(ConfigProperties.BASE_URL));

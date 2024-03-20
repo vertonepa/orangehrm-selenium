@@ -1,23 +1,22 @@
 package testcases;
 
 import annotations.ReportAnnotation;
-import enums.Category;
-import org.assertj.core.api.Assertions;
+import static enums.Category.EXAMPLE;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
-import pages.LoginPage;
 
 public final class ExampleTest extends BaseTest {
-    DashboardPage dp = new DashboardPage();
+    private final DashboardPage dashboard = new DashboardPage();
 
     private ExampleTest() {
     }
 
-    @ReportAnnotation(author = "vertonepa", category = Category.EXAMPLE)
-    @Test(description = "Validar que al logearse se redireccione al dashboard")
+    @ReportAnnotation(author = "vertonepa", category = EXAMPLE)
+    @Test(description = "Verificar redireccionar al dashboard al iniciar sesion")
     public void testcase() {
-        String header = dp.getHeaderText();
+        String header = dashboard.getHeaderText();
 
         soft.assertThat(header).isEqualTo("Dashboard");
+        soft.assertAll();
     }
 }

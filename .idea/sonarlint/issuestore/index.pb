@@ -21,9 +21,6 @@ Z
 *src/main/java/listener/CustomListener.java,f\3\f388bc339daa1b23778d6cccbe555e087e9eb025
 W
 'src/main/java/reports/ExtentLogger.java,8\e\8ed6fdb16622edce2401660eaa330de4ce95d6d4
-:
-
-testng.xml,5\2\522a7a4e21649af06297e31a9e33f13bb4fd3022
 U
 %src/main/java/util/ConstantsUtil.java,d\8\d8d9970a9ae2eeb4cc53d8f9fc47923807a84f98
 T
@@ -36,8 +33,6 @@ M
 extent-test-output/index.html,c\4\c4f71f497ad0ee8e21873ac0ee015ac9c182b3c9
 `
 0src/main/java/exceptions/FrameworkException.java,c\3\c3d0da44f1cfc1d4c4d925393ee2e0cd7df02202
-i
-9src/main/java/exceptions/NoSuchPropertyFileException.java,1\7\171b1069e071f2cd7ee47e58e0150c077d255c4f
 [
 +src/test/resources/config/config.properties,6\6\668c9988be6383a5a4dc10b219db3caac8e3b5d7
 B
@@ -52,10 +47,22 @@ X
 (src/test/java/testcases/ExampleTest.java,6\6\66ebffbb8039311295174ff659632574e83572db
 _
 /src/main/java/annotations/ReportAnnotation.java,9\2\92d9bd1fdb423b83fc382043cf7643ee4044fff1
-g
-7src/main/java/exceptions/ConfigPropertiesException.java,f\e\feefde8c3ef528377a03b9e65d80e7965724608d
 d
 4src/main/java/exceptions/PropertyUtilsException.java,a\3\a30e9bdb94fe0d74387ed5a81cabcb669c94e3f5
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+U
+%.mvn/wrapper/maven-wrapper.properties,3\2\32e074f71d16c1e88ac02aa83592ca6ad1fd98a8
+8
+mvnw.cmd,1\f\1f1763f358c257ea3515417352b82b0165647ad1
+4
+mvnw,5\d\5d837c4ed85ecaaf932c506e80ff5d7b9f3d590d
+N
+test-suites/duplicate-test.xml,a\a\aa7f3a42a2f771077451d451b8f4797b23c7262b
+S
+#src/main/java/runner/CLIParams.java,7\f\7fdae3fe1464e1e169bad8056c4697b5a9227e7e
+Z
+*src/main/java/factories/DriverFactory.java,e\b\eb087f290bd2b4af926bca0c083bfb9e632ef9ce
+l
+<src/main/java/exceptions/BrowserInvocationFailException.java,3\3\334f32d3564a49722543b9aff45f2b0f9e3609f1

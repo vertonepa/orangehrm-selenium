@@ -1,16 +1,15 @@
 package testcases;
 
 import driver.Driver;
-import enums.ConfigProperties;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.LoginPage;
-import util.PropertyUtil;
+import runner.CLIParams;
 
 
 public abstract class BaseTest {
-    SoftAssertions soft = new SoftAssertions();
+    protected SoftAssertions soft = new SoftAssertions();
 
     /**
      * Este método se ejecutará antes de ejecutar cualquier método de prueba.
@@ -19,8 +18,8 @@ public abstract class BaseTest {
     @BeforeMethod
     public void setUp() {
         Driver.initDriver();
-        LoginPage in = new LoginPage();
-        in.login(PropertyUtil.get(ConfigProperties.USERNAME), PropertyUtil.get(ConfigProperties.PASSWORD));
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(CLIParams.username, CLIParams.password);
     }
 
     /**

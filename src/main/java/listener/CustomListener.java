@@ -33,16 +33,16 @@ public class CustomListener implements ITestListener, ISuiteListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ExtentLogger.pass("Se ejecutó el método: " + result.getMethod().getMethodName() + "()", false);
+        ExtentLogger.pass("Ejecucion exitosa del metodo: " + result.getMethod().getMethodName() + "()", false);
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ExtentLogger.fail("Se ejecutó sin éxito el método: " + result.getMethod().getMethodName() + "()", true);
+        ExtentLogger.fail("Ejecucion fallida del metodo: " + result.getMethod().getMethodName() + "()", true);
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ExtentLogger.skip("Fue salteado el método: " + result.getMethod().getMethodName() + "()", false);
+        ExtentLogger.skip("Se ha salteado el metodo: " + result.getMethod().getMethodName() + "()", false);
     }
 }

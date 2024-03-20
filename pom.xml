@@ -22,9 +22,25 @@
         <testng.ver>7.9.0</testng.ver>
         <extentreports.ver>5.1.1</extentreports.ver>
         <assertj-core.ver>3.25.1</assertj-core.ver>
-        <poi-ooxml.ver>5.2.5</poi-ooxml.ver>
-        <!-->END OF VERSION BLOCK<-->
     </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.2.5</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <suiteXmlFile>test-suites/${tests}.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
     <dependencies>
         <dependency>
@@ -64,14 +80,6 @@
             <version>${assertj-core.ver}</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>${poi-ooxml.ver}</version>
-        </dependency>
-
-
     </dependencies>
 
 </project>
