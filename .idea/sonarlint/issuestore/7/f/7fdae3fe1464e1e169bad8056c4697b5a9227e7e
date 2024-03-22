@@ -1,13 +1,13 @@
 
 –
-java:S1104"SMake browser a static final constant or non-public and provide accessors if needed.(ş¤µŞ8ÒİÎÛå1J$96a0fdae-b03e-4e7d-bf8f-ab921491b555
+java:S1104"SMake browser a static final constant or non-public and provide accessors if needed.(ş¤µŞ8ÒİÎÛå1J$b9f20d87-20fd-453a-a855-29abd48084ff
 —
-java:S1104"TMake username a static final constant or non-public and provide accessors if needed.(‰¾õ8 ¥¼İå1J$df291244-569c-4c26-8599-278672501b42
+java:S1104"TMake username a static final constant or non-public and provide accessors if needed.(‰¾õ8 ¥¼İå1J$0d8fdb95-0bfa-4e81-9629-2a1f4f9a33a3
 œ
-java:S1104"TMake password a static final constant or non-public and provide accessors if needed.(÷ÖâÚüÿÿÿÿ8 ¥¼İå1J$473e5451-801f-4acb-9bfb-4ed9e6712555
+java:S1104"TMake password a static final constant or non-public and provide accessors if needed.(÷ÖâÚüÿÿÿÿ8 ¥¼İå1J$7b9b57c5-be90-4d73-8140-1510b9168d09
 p
-java:S1444"-Make this "public static browser" field final(ş¤µŞ8ÕİÎÛå1J$ff2a102b-8b33-4185-9f1b-c04560c9136f
+java:S1444"-Make this "public static browser" field final(ş¤µŞ8ÕİÎÛå1J$01114a34-7820-4256-812b-27b3f9ec8012
 q
-java:S1444".Make this "public static username" field final(‰¾õ8¢¥¼İå1J$5a0522e0-5c16-4c2a-a5a1-1131b455486d
+java:S1444".Make this "public static username" field final(‰¾õ8¢¥¼İå1J$fcb0717b-4eac-4031-a09e-a6e020d5b52f
 v
-java:S1444".Make this "public static password" field final(÷ÖâÚüÿÿÿÿ8¢¥¼İå1J$94cfe607-a769-4e48-98c7-c39add0805f8
+java:S1444".Make this "public static password" field final(÷ÖâÚüÿÿÿÿ8¢¥¼İå1J$b21929cd-20c9-49d4-99f2-47918b1f78dc
