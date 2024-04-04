@@ -3,7 +3,6 @@
 
 
 ## Comando para ejecutar pruebas
----
 Mediante CLI podemos ejecutar pruebas de nuestro proyecto Maven de la
 siguiente manera: 
 ```bash
