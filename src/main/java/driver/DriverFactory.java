@@ -1,4 +1,4 @@
-package factories;
+package driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +11,13 @@ public final class DriverFactory {
     private DriverFactory() {
     }
 
+    /**
+     * Este método se encargará de tomar las decisiones correspondientes de configuración
+     * de driver a partir de los valores que se le pasen mediante CLI,
+     * los cuales están establecidos en {@link CLIParams}
+     *
+     * @return driver
+     */
     public static WebDriver getDriver() {
         WebDriver driver = null;
         String browser = CLIParams.browser;
@@ -23,8 +30,6 @@ public final class DriverFactory {
             driver = WebDriverManager.chromedriver().create();
         } else if (browser.equalsIgnoreCase("firefox")) {
             driver = WebDriverManager.firefoxdriver().create();
-        } else if (browser.equalsIgnoreCase("edge")) {
-            driver = WebDriverManager.edgedriver().create();
         }
 
         return driver;

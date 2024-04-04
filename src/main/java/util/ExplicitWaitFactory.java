@@ -1,4 +1,4 @@
-package factories;
+package util;
 
 import driver.DriverManager;
 import enums.WaitStrategy;
@@ -10,6 +10,10 @@ import util.ConstantsUtil;
 
 import java.time.Duration;
 
+/**
+ * Maneja distintas condiciones de espera e incluso permite indicar que no haya condición
+ * en aquellos casos donde no haga falta.
+ */
 public class ExplicitWaitFactory {
 
     private ExplicitWaitFactory() {

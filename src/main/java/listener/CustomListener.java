@@ -9,8 +9,10 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import reports.ExtentLogger;
 import reports.ExtentReport;
+import runner.CLIParams;
 
 public class CustomListener implements ITestListener, ISuiteListener {
+
     @Override
     public void onStart(ISuite suite) {
         ExtentReport.initReport();
@@ -33,16 +35,20 @@ public class CustomListener implements ITestListener, ISuiteListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ExtentLogger.pass("Ejecucion exitosa del metodo: " + result.getMethod().getMethodName() + "()", false);
+        String message = "method=" + result.getMethod().getMethodName() + "() " + "|| browser=" + CLIParams.browser;
+        ExtentLogger.pass(message, false);
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ExtentLogger.fail("Ejecucion fallida del metodo: " + result.getMethod().getMethodName() + "()", true);
+        String message = "method=" + result.getMethod().getMethodName() + "() " + "|| browser=" + CLIParams.browser;
+        ExtentLogger.fail(message, true);
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ExtentLogger.skip("Se ha salteado el metodo: " + result.getMethod().getMethodName() + "()", false);
+        String message = "method=" + result.getMethod().getMethodName() + "() " + "|| browser=" + CLIParams.browser;
+        ExtentLogger.skip(message, false);
     }
+
 }

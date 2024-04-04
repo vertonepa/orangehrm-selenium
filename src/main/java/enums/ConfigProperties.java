@@ -3,8 +3,6 @@ package enums;
 public enum ConfigProperties {
 
     BASE_URL,
-    USERNAME,
-    PASSWORD,
     OVERRIDE_REPORTS,
     PASSED_STEPS_SCREENSHOTS,
     FAILED_STEPS_SCREENSHOTS,

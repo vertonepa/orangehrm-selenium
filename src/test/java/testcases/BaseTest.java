@@ -12,8 +12,8 @@ public abstract class BaseTest {
     protected SoftAssertions soft = new SoftAssertions();
 
     /**
-     * Este método se ejecutará antes de ejecutar cualquier método de prueba.
-     * <p>Su función es invocar una instancia del navegador y cargar la url base.</>
+     * La función de este método es preparar las condiciones necesarias
+     * para la correcta ejecución de cada caso de prueba
      */
     @BeforeMethod
     public void setUp() {

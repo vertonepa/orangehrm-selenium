@@ -2,7 +2,7 @@ package pages;
 
 import driver.DriverManager;
 import enums.WaitStrategy;
-import factories.ExplicitWaitFactory;
+import util.ExplicitWaitFactory;
 import org.openqa.selenium.By;
 
 public class BasePage {
