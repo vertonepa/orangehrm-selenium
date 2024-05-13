@@ -1,0 +1,48 @@
+name: selenium experiment in-sprint testing
+run-name: ${{ github.actor }} ran test suite in ${{ github.ref_name }}
+
+on:
+  push:
+    branches:
+      - feature/*
+
+jobs:
+  e2e-testsuite:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        browser: [ 'chrome', 'firefox' ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Pull the project into the runner
+        uses: actions/checkout@v4
+
+      - name: Setting up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Restore Maven cache
+        uses: skjolber/maven-cache-github-action@v1
+        continue-on-error: true
+        with:
+          step: restore
+
+      - name: Run the tests
+        run: ./mvnw clean test -Dtests=example-test -Dbrowser=${{matrix.browser}} -Dusername=${{secrets.USERNAME}} -Dusername=${{secrets.USERNAME}}
+
+      - name: Archive artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Test report on ${{ matrix.browser }}
+          path: ./extent-test-output/index.html
+
+      - name: Save Maven cache
+        uses: skjolber/maven-cache-github-action@v1
+        continue-on-error: true
+        with:
+          step: save
