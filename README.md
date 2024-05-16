@@ -1,8 +1,7 @@
 # Selenium | Java | TestNG | Maven | Extent Reports
 ---
 
-
-## Comando para ejecutar pruebas
+## Comandos de ejecución de pruebas
 Mediante CLI podemos ejecutar pruebas de nuestro proyecto Maven de la
 siguiente manera: 
 ```bash
@@ -35,3 +34,8 @@ propiedades `username=admin` y `password=admin123`.
 
 Los parámetros están definidos en la clase [CLIParams](src/main/java/runner/CLIParams.java), con excepción del 
 parámetro `tests` el cual está definido en el archivo [pom.xml](pom.xml)
+
+
+## Reportes
+Este framework tiene una integración con ExtentReports y TestNG, cada vez
+que se ejecute una prueba se generará un reporte HTML.

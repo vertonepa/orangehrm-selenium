@@ -9,6 +9,7 @@ target/
 *.iml
 *.ipr
 extent-test-output/index.html
+img
 
 ### VS Code ###
 .vscode/
