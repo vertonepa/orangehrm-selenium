@@ -25,24 +25,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Restore Maven cache
-        uses: skjolber/maven-cache-github-action@v1
-        continue-on-error: true
-        with:
-          step: restore
-
       - name: Run the tests
-        run: ./mvnw clean test -Dtests=example-test -Dbrowser=${{matrix.browser}} -Dusername=${{secrets.USERNAME}} -Dusername=${{secrets.USERNAME}}
+        run: echo ./mvnw clean test -Dtests=example-test -Dbrowser=${{matrix.browser}} -Dusername=${{secrets.USERNAME}} -Dpassword=${{secrets.PASSWORD}}
 
       - name: Archive artifact
         uses: actions/upload-artifact@v4
-        if: always()
         with:
-          name: Test report on ${{ matrix.browser }}
-          path: ./extent-test-output/index.html
-
-      - name: Save Maven cache
-        uses: skjolber/maven-cache-github-action@v1
-        continue-on-error: true
-        with:
-          step: save
+          name: Test report on ${{ matrix.os }} ${{ matrix.browser }}
+          path: ${{github.workspace}}/extent-test-output/index.html

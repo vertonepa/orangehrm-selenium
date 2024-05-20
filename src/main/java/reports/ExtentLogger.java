@@ -13,11 +13,6 @@ public class ExtentLogger {
         ExtentManager.getExtentTest().pass(message);
     }
 
-    /**
-     *
-     * @param message
-     * @param isScreenshotNeeded
-     */
     public static void pass(String message, boolean isScreenshotNeeded) {
         if (PropertyUtil.get(ConfigProperties.PASSED_STEPS_SCREENSHOTS).equalsIgnoreCase("yes") && isScreenshotNeeded)
             ExtentManager.getExtentTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotsUtil.getBase64Image()).build());
