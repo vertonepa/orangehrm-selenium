@@ -25,6 +25,9 @@ public class Driver {
         }
     }
 
+    /**
+     * Finaliza la instancia del navegador
+     */
     public static void quitDriver() {
         if (Objects.nonNull(DriverManager.getDriver())) {
             DriverManager.getDriver().quit();

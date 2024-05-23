@@ -23,10 +23,19 @@ public final class DriverManager {
         return tDriver.get();
     }
 
+    /**
+     * Establece el valor de una instancia de WebDriver a una variable ThreadLocal
+     *
+     * @param driverRef instancia de WebDriver que debe salvarse de los problemas de seguridad del Thread.<p>
+     */
     static void setDriver(WebDriver driverRef) {
         if (Objects.nonNull(driverRef)) tDriver.set(driverRef);
     }
 
+    /**
+     * LLamar al método remove() en una variable ThreadLocal asegura establecer el valor por defecto en
+     * esta variable. <p>
+     */
     static void unload() {
         tDriver.remove();
     }
