@@ -12,7 +12,7 @@ public final class ExampleTest extends BaseTest {
     }
 
     @ReportAnnotation(author = "vertonepa", category = EXAMPLE)
-    @Test(description = "Validar redireccionar al dashboard al iniciar sesion")
+    @Test(description = "Verificar redireccionar al dashboard al iniciar sesion")
     public void testcase() {
         String header = dashboard.getHeaderText();
 

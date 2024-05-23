@@ -11,10 +11,6 @@ import runner.CLIParams;
 public abstract class BaseTest {
     protected SoftAssertions soft = new SoftAssertions();
 
-    /**
-     * La función de este método es preparar las condiciones necesarias
-     * para la correcta ejecución de cada caso de prueba
-     */
     @BeforeMethod
     public void setUp() {
         Driver.initDriver();
@@ -22,9 +18,6 @@ public abstract class BaseTest {
         loginPage.login(CLIParams.username, CLIParams.password);
     }
 
-    /**
-     * Este método finaliza la instancia del navegador
-     */
     @AfterMethod
     public void tearDown() {
         Driver.quitDriver();
