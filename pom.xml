@@ -16,10 +16,11 @@
         <!-->START VERSION BLOCK<-->
         <!-->Estas variables se encuentran en orden con el orden de cada dependencia
         dentro de este archivo POM<-->
-        <selenium-java.ver>4.18.1</selenium-java.ver>
+        <datafaker.ver>2.2.2</datafaker.ver>
+        <selenium-java.ver>4.21.0</selenium-java.ver>
         <webdrivermanager.ver>5.6.4</webdrivermanager.ver>
         <slf4j-simple.ver>2.0.11</slf4j-simple.ver>
-        <testng.ver>7.9.0</testng.ver>
+        <testng.ver>7.10.2</testng.ver>
         <extentreports.ver>5.1.1</extentreports.ver>
         <assertj-core.ver>3.25.1</assertj-core.ver>
     </properties>
@@ -43,6 +44,12 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>net.datafaker</groupId>
+            <artifactId>datafaker</artifactId>
+            <version>${datafaker.ver}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
