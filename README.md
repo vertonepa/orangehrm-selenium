@@ -12,16 +12,16 @@ Para poder realizar pruebas con este proyecto se debe:
 
 ## Introducción
 
-Proyecto de automatización end-to-end que tiene el objetivo de presentar 
+Proyecto de automatización end-to-end que tiene el objetivo de presentar
 mi forma de trabajar el desarrollo de casos de prueba automatizados con Selenium + Java.
 
 El patrón de diseño elegido para organizar las pruebas es el Page Object
-Model (POM), cada modelo de página se encuentra en el directorio
+Model (POM), cada modelo de página se encuentra en la carpeta
 [pages](src/main/java/pages).
 
 Las pruebas, además, están preparadas para ejecutarse en Chrome
 y Firefox sobre las últimas versiones de los sistemas operativos
-Windows y Ubuntu a través de un workflow de GitHub Actions. 
+Windows y Ubuntu a través de un workflow de GitHub Actions.
 Una vez pasada la ejecución se generarán
 los reportes correspondientes como artefactos descargables.
 
@@ -40,7 +40,7 @@ Una vez ubicados en el proyecto
 
 ![organization](https://i.postimg.cc/4NPRWrRy/organization.png)
 
-Dentro de `src` se encuentran los directorios `main` y `test`, el primero
+Dentro de `src` se encuentran las carpetas `main` y `test`, el primero
 va a contener el manejo de los drivers, generación de reportes,
 utilidades del framework, modelos de página,
 listeners, manejo de excepciones personalizadas, entre otros.
@@ -50,19 +50,19 @@ con la lógica de las pruebas.
 
 
 
-### Trabajar en este proyecto
+### Mecánica de trabajo en este proyecto
 
-**[ 1 ]** Clonar el repositorio a nuestro entorno local con el comando `git clone https://github.com/vertonepa/orangehrm-selenium.git`
+**[ 1 ]** Se posiciona en la rama `qa` y ejecutar el comando `git pull origin` para actualizar la rama
 
-**[ 2 ]** Posicionarse en la rama `qa` y crear una rama `feature/...`, ejemplo:
+**[ 2 ]** Se crea una rama `feature/...`, ejemplo:
 ``` bash
 git checkout -b feature/new-feature
 ```
 
-**[ 3 ]** Crear una clase de prueba en [testcases](src/test/java/testcases), esta debe extender
+**[ 3 ]** Se crea una clase de prueba en [testcases](src/test/java/testcases), esta debe extender
 de **BaseTest**.
 
-**[ 4 ]** Crear un archivo .xml en la carpeta test-suites, por ejemplo, `US01-new-test-excecution.xml`.
+**[ 4 ]** Se crea un archivo .xml en la carpeta test-suites, por ejemplo, `US01-new-test-excecution.xml`.
 La estructura de los archivos de ejecución de este proyecto es la siguiente:
 ```xml
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
@@ -87,7 +87,9 @@ La estructura de los archivos de ejecución de este proyecto es la siguiente:
 </suite>
 ```
 
-**[ 5 ]** Dirigirse al archivo [CI-Suite.yml](.github/workflows/CI-Suite.yml) y modificar el step "Run the tests"
+**[ 5 ]**
+
+Se dirige al archivo [CI-Suite.yml](.github/workflows/CI-Suite.yml) y modificar el step "Run the tests"
 ```yaml
       - name: Run the tests
         run: echo ./mvnw clean test -Dtests=example-test -Dbrowser=${{matrix.browser}} -Dusername=${{secrets.USERNAME}} -Dpassword=${{secrets.PASSWORD}
@@ -95,11 +97,25 @@ La estructura de los archivos de ejecución de este proyecto es la siguiente:
 cambiando `-Dtests=example-tests` para que apunte al archivo de ejecución de la
 actual feature que estemos trabajando, tomando el ejemplo anterior: `-Dtests=US01-new-test-excecution` (Importante: NO indicar la extensión .xml, solo filename)
 
-**[ 6 ]** Una vez hecho esto, enviar como primer cambio al repo remoto de forma correspondiente.
+**[ 6 ]** Se agrega un archivo markdown a la carpeta `docs` que documente la funcionalidad
+que se va a probar
 
-Como nota, solo agregar a stage estas tres carpetas cuando se trabaja en una feature:
+**[ 7 ]**
+
+Una vez hecho esto, se envía como primer cambio al repositorio remoto de forma correspondiente:
+- `git add xyz`: _xyz_ representa cada carpeta a agregarse
+- `git commit -m "primer commit us-n"`
+- `git push --set-upstream origin new-example-feature-branch`
+
+NOTA 1: al ser un proyecto de trabajo para una sola persona no hace falta
+actualizar repositorio local antes de pushear.
+
+NOTA 2: cuando se trabaja en una feature solo agregar a stage las siguientes carpetas:
 ```bash 
 git add .github
+```
+```bash 
+git add docs
 ```
 ```bash 
 git add src
@@ -108,14 +124,18 @@ git add src
 git add test-suites
 ```
 
-**[ 7 ]** Ahora trabajar normalmente, cuando termine de trabajar la feature 
-enviar PR a rama `qa`.
+**[ 8 ]** A partir de este momento se comienza a repetir un ciclo
+donde se agregan nuevos cambios en remoto hasta terminar con las pruebas.
+Luego, enviar PR y mergear los cambios en rama `qa`.
+
+**[ 9 ]** Se dirige a la rama `qa` en el repositorio local y ejecutar `git pull`
+para traer los cambios actualizados del remoto.
 
 
 
 ## Comandos de ejecución de pruebas
 
-Mediante CLI podemos ejecutar pruebas localmente de la
+Mediante CLI se pueden ejecutar pruebas localmente de la
 siguiente manera:
 ```bash
 ./mvnw clean test -Dtests=example-test
